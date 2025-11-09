@@ -25,7 +25,11 @@
       backdrop-filter: blur(10px);
     }
     header img {
-      height: 60px;
+      height: 70px;
+      transition: transform 0.3s;
+    }
+    header img:hover {
+      transform: scale(1.05);
     }
     nav a {
       color: #e0e0e0;
@@ -39,12 +43,23 @@
     }
     .hero {
       height: 100vh;
-      background: url('silver-shard-background.jpg') center/cover no-repeat;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('silver-shard-background.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding-top: 100px;
+    }
+    .hero img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
     .hero h1 {
       font-size: 3rem;
@@ -77,6 +92,14 @@
       transform: translateY(-5px);
       box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
     }
+    .trailer {
+      margin-top: 50px;
+    }
+    .trailer video {
+      width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
     footer {
       background: #000;
       color: #888;
@@ -97,6 +120,7 @@
   </header>
 
   <section class="hero" id="home">
+    <img src="silver-shard-logo.png" alt="Silver Shard Studios Main Logo">
     <h1>Silver Shard Studios</h1>
     <p>Forging worlds from light and shadow. Home of the Zero Shard saga and more cinematic adventures.</p>
   </section>
@@ -112,6 +136,15 @@
         <h3>Coming Soon</h3>
         <p>Stay tuned for our next mysterious tale from the Silver Shard universe.</p>
       </div>
+    </div>
+
+    <div class="trailer">
+      <h3>Official Trailer</h3>
+      <p>You can import your trailer here later. Once you have it ready, simply replace the placeholder below with your video file.</p>
+      <video controls poster="silver-shard-logo.png">
+        <source src="your-trailer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
   </section>
 
